@@ -1,2 +1,0 @@
-# blazmag.github.io
-Portfolio
