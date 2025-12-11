@@ -92,7 +92,7 @@
         <div class="container">
           <div class="row justify-content-center mb-5">
             <div class="col-lg-8">
-              <h2 class="display-5 fw-bold mb-4">Featured Projects</h2>
+              <h2 class="display-5 fw-bold mb-4">Featured Work</h2>
             </div>
           </div>
 
@@ -105,7 +105,7 @@
                     class="project-card cursor-pointer"
                     data-bs-toggle="modal"
                     data-bs-target="#projectModal"
-                    data-project-title="Project One"
+                    data-project-title="Moshi Play"
                     data-project-image="https://picsum.photos/500/400?random=1"
                     data-project-description="A comprehensive web application built with modern technologies. This project demonstrates best practices in software architecture and user experience design."
                   >
@@ -116,8 +116,8 @@
                         class="img-fluid"
                       />
                     </div>
-                    <h3 class="fw-bold mt-3">Project One</h3>
-                    <p class="text-muted">Web Application</p>
+                    <h3 class="fw-bold mt-3">Moshi Play</h3>
+                    <p class="text-muted">500k+ DL, 4.5⭐</p>
                   </div>
                 </div>
 
@@ -138,8 +138,8 @@
                         class="img-fluid"
                       />
                     </div>
-                    <h3 class="fw-bold mt-3">Project Two</h3>
-                    <p class="text-muted">Mobile Application</p>
+                    <h3 class="fw-bold mt-3">Moshi Sleep</h3>
+                    <p class="text-muted">2M+ DL, 4.6⭐</p>
                   </div>
                 </div>
 
@@ -160,8 +160,8 @@
                         class="img-fluid"
                       />
                     </div>
-                    <h3 class="fw-bold mt-3">Project Three</h3>
-                    <p class="text-muted">Distributed System</p>
+                    <h3 class="fw-bold mt-3">Zipcar</h3>
+                    <p class="text-muted">1M+ DL, 4.3⭐</p>
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@
     <footer class="bg-light border-top py-4 mt-5">
       <div class="container text-center">
         <p class="text-muted mb-0">
-          &copy; 2025 Blaz Magdic. All rights reserved.
+          &copy; <span id="year"></span> Blaz Magdic. All rights reserved.
         </p>
       </div>
     </footer>
@@ -241,6 +241,9 @@
 
     <!-- Custom JS for Modal Handling -->
     <script>
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+
       // Handle project modal population
       const projectModal = document.getElementById("projectModal");
       projectModal.addEventListener("show.bs.modal", function (event) {
