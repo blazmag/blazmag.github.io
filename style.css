@@ -1,3 +1,408 @@
-@media (min-width: 992px) {
-  .rounded-lg-3 { border-radius: .3rem; }
+/* ===================================
+   Global Styles
+   =================================== */
+
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-light: #f5f5f5;
+  --color-gray-dark: #333333;
+  --transition-speed: 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: all var(--transition-speed);
+}
+
+a:hover {
+  color: var(--color-gray-dark);
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  font-weight: 400;
+}
+
+.lead {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-gray-dark);
+}
+
+/* ===================================
+   Navbar
+   =================================== */
+
+.navbar {
+  background-color: var(--color-white) !important;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--color-black) !important;
+}
+
+.navbar-brand:hover {
+  color: var(--color-gray-dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--color-black) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--color-gray-dark) !important;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero-section {
+  min-height: 80vh;
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-black);
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-section .lead {
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   About Section
+   =================================== */
+
+.about-section {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-gray-dark);
+}
+
+/* ===================================
+   Social Section
+   =================================== */
+
+.social-section {
+  background-color: var(--color-white);
+}
+
+.social-section h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.btn-outline-dark {
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all var(--transition-speed);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all var(--transition-speed);
+}
+
+.btn-dark:hover {
+  background-color: var(--color-gray-dark);
+  border-color: var(--color-gray-dark);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Projects Section
+   =================================== */
+
+.projects-section {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.project-card {
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  padding: 1rem;
+  border: 1px solid var(--color-gray-light);
+  background-color: var(--color-white);
+}
+
+.project-card:hover {
+  border-color: var(--color-black);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-light);
+  margin-bottom: 1rem;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-speed);
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: var(--color-gray-dark);
+  letter-spacing: 0.5px;
+}
+
+/* ===================================
+   Modal Styles
+   =================================== */
+
+.modal-content {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-black);
+  border-radius: 0;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--color-gray-light);
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-body img {
+  border: 1px solid var(--color-gray-light);
+  margin-bottom: 1.5rem;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  color: var(--color-gray-dark);
+  line-height: 1.8;
+}
+
+.btn-close {
+  opacity: 0.5;
+  transition: opacity var(--transition-speed);
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* ===================================
+   Contact Section
+   =================================== */
+
+.contact-section {
+  background-color: var(--color-white);
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  color: var(--color-gray-dark);
+  line-height: 1.8;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+footer {
+  background-color: var(--color-gray-light);
+  border-top: 2px solid var(--color-black);
+}
+
+footer p {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 60vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.1rem;
+  }
+
+  .about-section h2,
+  .social-section h2,
+  .projects-section h2,
+  .contact-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    margin-bottom: 1rem;
+  }
+
+  .project-image-wrapper {
+    height: 200px;
+  }
+
+  .btn-outline-dark,
+  .btn-dark {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .about-section h2,
+  .social-section h2,
+  .projects-section h2,
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-image-wrapper {
+    height: 180px;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-muted {
+  color: var(--color-gray-dark) !important;
 }
